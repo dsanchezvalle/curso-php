@@ -7,6 +7,7 @@ namespace App\Models;
 require_once 'vendor/autoload.php';
 
 use Illuminate\Database\Capsule\Manager as Capsule;
+use App\Models\Job;
 
 $capsule = new Capsule;
 
@@ -25,6 +26,19 @@ $capsule->addConnection([
 $capsule->setAsGlobal();
 // Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
 $capsule->bootEloquent();
+
+if(!empty($_POST)){
+    $job = new Job();
+    $job->title = $_POST['title'];
+    $job->description = $_POST['description'];
+    $job->visible = true;
+    //$job->months = 10;
+    $job->save();
+}
+//var_dump($_POST);
+
+
+
 
 ?>
 

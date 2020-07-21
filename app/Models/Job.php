@@ -2,11 +2,14 @@
 namespace App\Models;
 //require_once 'BaseElement.php'; //Reemplazado por autoload
 //require_once 'Printable.php';
+require_once 'vendor/autoload.php';
 
-//use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-class Job extends BaseElement {
+class Job extends Model {
 
+    protected $table = 'jobs';
+    //Eliminamos el constructor para probar conexión con BD
  /*   public function __construct($title, $description)
     {
         $newTitle = 'Job: ' . $title;

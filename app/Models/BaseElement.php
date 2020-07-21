@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 require_once 'app/Models/Printable.php';
+require_once 'vendor/autoload.php';
 
 class BaseElement implements Printable {
     protected $title;
