@@ -3,15 +3,17 @@ namespace App\Models;
 //require_once 'BaseElement.php'; //Reemplazado por autoload
 //require_once 'Printable.php';
 
+//use Illuminate\Database\Eloquent\Model;
+
 class Job extends BaseElement {
 
-    public function __construct($title, $description)
+ /*   public function __construct($title, $description)
     {
         $newTitle = 'Job: ' . $title;
         parent::__construct($newTitle, $description);
         //$this->title= $newTitle;
     }
-
+*/
     public function getDurationAsString (){
         $years = floor($this -> months / 12);
         $extraMonths = $this -> months % 12;

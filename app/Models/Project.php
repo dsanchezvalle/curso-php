@@ -3,6 +3,7 @@ namespace App\Models;
 //require_once 'BaseElement.php'; //Reemplazado por autoload
 //require_once 'Printable.php';
 
+
 class Project extends BaseElement {
 /*
     public function __construct($title, $description)
