@@ -1,11 +1,36 @@
 <?php
+namespace App\Models;
+require_once 'vendor/autoload.php';
+
 $lastname = 'Sánchez Valle';
 //$name = 'David ' . $lastname;
 $name = "David $lastname";
 $limitMonths = 1000;
-require_once('jobs.php');
 
-//var_dump($jobs);
+
+use Illuminate\Database\Capsule\Manager as Capsule;
+use App\Models\{Job, Project};
+
+$capsule = new Capsule;
+
+$capsule->addConnection([
+    'driver'    => 'mysql',
+    'host'      => 'localhost',
+    'database'  => 'cursophp',
+    'username'  => 'david',
+    'password'  => '12345',
+    'charset'   => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix'    => '',
+]);
+
+
+// Make this Capsule instance available globally via static methods... (optional)
+$capsule->setAsGlobal();
+// Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
+$capsule->bootEloquent();
+
+require_once 'jobs2.php';
 ?>
 
 <!doctype html>

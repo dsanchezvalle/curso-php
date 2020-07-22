@@ -63,7 +63,7 @@ $projects = [$project1];
 ];
 */
 
-function printElement(Printable $job) {
+function printElement($job) {
     //Contenido de la función
     //echo 'HolaJobs';
     if ($job -> visible == false){
